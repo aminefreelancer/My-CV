@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SkillController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +23,8 @@ Auth::routes();
 
 Route::get('/dashboard', [HomeController::class, 'create'])->name('dashboard');
 Route::post('/dashboard', [HomeController::class, 'update'])->name('updateDashboard');
+
+Route::get('/categories', [CategoryController::class, 'create'])->name('categories');
+Route::post('/categories', [CategoryController::class, 'store'])->name('newCategory');
+
+Route::get('/skills', [SkillController::class, 'create'])->name('skills');

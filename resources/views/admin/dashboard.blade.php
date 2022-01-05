@@ -2,19 +2,9 @@
 
 @section('content')
     <!--Page header-->
-    <div class="page-header">
-        <div class="page-leftheader">
-            <h4 class="page-title mb-0 text-primary">Dashboard</h4>
-        </div>
-        <div class="page-rightheader">
-            <div class="btn-list">
-                <button class="btn btn-outline-primary"><i class="fe fe-download me-2"></i>
-                    View online
-                </button>
-                
-            </div>
-        </div>
-    </div>
+    @component('admin.layouts.page-header')
+        Dashboard
+    @endcomponent
     <!--End Page header-->
 
     <!-- Row -->
@@ -27,19 +17,17 @@
                 @if ($errors->any())
                 <div class="card-body">
                     @foreach ($errors->all() as $error)
-                        <div class="alert alert-danger" role="alert">
-                            <button type="button" class="btn-close mr-negative-16" data-bs-dismiss="alert" aria-hidden="true">×</button>
+                        @component('admin.layouts.info-flash', ['alert' => 'alert-danger'])
                             {{ $error }}
-                        </div>
+                        @endcomponent
                     @endforeach
                 </div>
                 @elseif (session()->has('success'))
-                <div class="card-body">
-                    <div class="alert alert-info" role="alert">
-                        <button type="button" class="btn-close mr-negative-16" data-bs-dismiss="alert" aria-hidden="true">×</button>
-                        {{ session('success') }}
+                    <div class="card-body">
+                        @component('admin.layouts.info-flash', ['alert' => 'alert-info'])
+                            {{ session('success') }}
+                        @endcomponent
                     </div>
-                </div>
                 @endif
                 <div class="card-body">
                     <form action="{{ route('updateDashboard') }}" method="POST">

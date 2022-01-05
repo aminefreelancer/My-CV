@@ -23,8 +23,7 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function create()
-    {
-        
+    {   
         return view('admin.dashboard', ['user' => User::find(1)]);
     }
 
@@ -47,6 +46,6 @@ class HomeController extends Controller
         $user = User::find(1);
         $user->update($attributes);
         
-        return redirect('dashboard')->with('success', 'Your information has been updated!');;
+        return redirect('dashboard')->with('success', 'Your information has been updated!');
     }
 }
