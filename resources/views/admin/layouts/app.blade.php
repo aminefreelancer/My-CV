@@ -13,38 +13,38 @@
 		<title>Mohamed Amine AKACHA - Full Stack Developer </title>
 
 		<!--Favicon -->
-		<link rel="icon" href="assets/images/brand/favicon.ico" type="image/x-icon"/>
+		<link rel="icon" href="{{ asset('assets/images/brand/favicon.ico')}}" type="image/x-icon"/>
 
 		<!--Bootstrap css -->
-		<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="{{ asset('assets/plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
 		<!-- Style css -->
-		<link href="assets/css/style.css" rel="stylesheet" />
-		<link href="assets/css/dark.css" rel="stylesheet" />
-		<link href="assets/css/skin-modes.css" rel="stylesheet" />
+		<link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" />
+		<link href="{{ asset('assets/css/dark.css') }}" rel="stylesheet" />
+		<link href="{{ asset('assets/css/skin-modes.css') }}" rel="stylesheet" />
 
 		<!-- Animate css -->
-		<link href="assets/css/animated.css" rel="stylesheet" />
+		<link href="{{ asset('assets/css/animated.css') }}" rel="stylesheet" />
 
 		<!--Sidemenu css -->
-       <link href="assets/css/sidemenu.css" rel="stylesheet">
+       <link href="{{ asset('assets/css/sidemenu.css') }}" rel="stylesheet">
 
 		<!-- P-scroll bar css-->
-		<link href="assets/plugins/p-scrollbar/p-scrollbar.css" rel="stylesheet" />
+		<link href="{{ asset('assets/plugins/p-scrollbar/p-scrollbar.css') }}" rel="stylesheet" />
 
 		<!---Icons css-->
-		<link href="assets/css/icons.css" rel="stylesheet" />
+		<link href="{{ asset('assets/css/icons.css') }}" rel="stylesheet" />
 
 	    <!-- Color Skin css -->
-		<link id="theme" href="assets/colors/color1.css" rel="stylesheet" type="text/css"/>
+		<link id="theme" href="{{ asset('assets/colors/color1.css') }}" rel="stylesheet" type="text/css"/>
 
 		<!-- INTERNAL File Uploads css -->
-		<link href="assets/plugins/fancyuploder/fancy_fileupload.css" rel="stylesheet" />
+		<link href="{{ asset('assets/plugins/fancyuploder/fancy_fileupload.css') }}" rel="stylesheet" />
 		<!-- INTERNAL File Uploads css-->
-        <link href="assets/plugins/fileupload/css/fileupload.css" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('assets/plugins/fileupload/css/fileupload.css') }}" rel="stylesheet" type="text/css" />
 
 		<!--INTERNAL Select2 css -->
-		<link href="assets/plugins/select2/select2.min.css" rel="stylesheet" />
+		<link href="{{ asset('assets/plugins/select2/select2.min.css') }}" rel="stylesheet" />
 
 	</head>
 
@@ -52,7 +52,7 @@
 
 		<!---Global-loader-->
 		<div id="global-loader" >
-			<img src="assets/images/svgs/loader.svg" alt="loader">
+			<img src="{{ asset('assets/images/svgs/loader.svg') }}" alt="loader">
 		</div>
 		<!--- End Global-loader-->
 
@@ -127,7 +127,7 @@
                                                     <div class="dropdown profile-dropdown d-flex">
                                                         <a href="#" class="nav-link pe-0 leading-none" data-bs-toggle="dropdown">
                                                             <span class="header-avatar1">
-                                                                <img src="img/main_photo.jpg" alt="img" class="avatar avatar-md brround">
+                                                                <img src="{{asset('img/main_photo.jpg')}}" alt="img" class="avatar avatar-md brround">
                                                             </span>
                                                         </a>
                                                         <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow animated">
@@ -183,46 +183,46 @@
 		<a href="#top" id="back-to-top"><i class="fe fe-chevron-up"></i></a>
 
 		<!-- Jquery js-->
-		<script src="assets/js/jquery.min.js"></script>
+		<script src="{{ asset('assets/js/jquery.min.js') }}"></script>
 
 		<!-- Bootstrap5 js-->
-		<script src="assets/plugins/bootstrap/popper.min.js"></script>
-		<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+		<script src="{{ asset('assets/plugins/bootstrap/popper.min.js') }}"></script>
+		<script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
 
 		<!--Othercharts js-->
-		<script src="assets/plugins/othercharts/jquery.sparkline.min.js"></script>
+		<script src="{{ asset('assets/plugins/othercharts/jquery.sparkline.min.js') }}"></script>
 
 		<!-- Circle-progress js-->
-		<script src="assets/js/circle-progress.min.js"></script>
+		<script src="{{ asset('assets/js/circle-progress.min.js') }}"></script>
 
 		<!-- Jquery-rating js-->
-		<script src="assets/plugins/rating/jquery.rating-stars.js"></script>
+		<script src="{{ asset('assets/plugins/rating/jquery.rating-stars.js') }}"></script>
 
 		<!--Sidemenu js-->
-		<script src="assets/plugins/sidemenu/sidemenu.js"></script>
+		<script src="{{ asset('assets/plugins/sidemenu/sidemenu.js') }}"></script>
 
 		<!-- P-scroll js-->
-		<script src="assets/plugins/p-scrollbar/p-scrollbar.js"></script>
-		<script src="assets/plugins/p-scrollbar/p-scroll1.js"></script>
-		<script src="assets/plugins/p-scrollbar/p-scroll.js"></script>
+		<script src="{{ asset('assets/plugins/p-scrollbar/p-scrollbar.js') }}"></script>
+		<script src="{{ asset('assets/plugins/p-scrollbar/p-scroll1.js') }}"></script>
+		<script src="{{ asset('assets/plugins/p-scrollbar/p-scroll.js') }}"></script>
 
 		<!-- INTERNAL File-Uploads Js-->
-		<script src="assets/plugins/fancyuploder/jquery.ui.widget.js"></script>
-        <script src="assets/plugins/fancyuploder/jquery.fileupload.js"></script>
-        <script src="assets/plugins/fancyuploder/jquery.iframe-transport.js"></script>
-        <script src="assets/plugins/fancyuploder/jquery.fancy-fileupload.js"></script>
-        <script src="assets/plugins/fancyuploder/fancy-uploader.js"></script>
+		<script src="{{ asset('assets/plugins/fancyuploder/jquery.ui.widget.js') }}"></script>
+        <script src="{{ asset('assets/plugins/fancyuploder/jquery.fileupload.js') }}"></script>
+        <script src="{{ asset('assets/plugins/fancyuploder/jquery.iframe-transport.js') }}"></script>
+        <script src="{{ asset('assets/plugins/fancyuploder/jquery.fancy-fileupload.js') }}"></script>
+        <script src="{{ asset('assets/plugins/fancyuploder/fancy-uploader.js') }}"></script>
 
 		<!-- INTERNAL File uploads js -->
-        <script src="assets/plugins/fileupload/js/dropify.js"></script>
-		<script src="assets/js/filupload.js"></script>
+        <script src="{{ asset('assets/plugins/fileupload/js/dropify.js') }}"></script>
+		<script src="{{ asset('assets/js/filupload.js') }}"></script>
 
 		<!--INTERNAL Select2 js -->
-		<script src="assets/plugins/select2/select2.full.min.js"></script>
-		<script src="assets/js/select2.js"></script>
+		<script src="{{ asset('assets/plugins/select2/select2.full.min.js') }}"></script>
+		<script src="{{ asset('assets/js/select2.js') }}"></script>
 
 		<!-- Custom js-->
-		<script src="assets/js/custom.js"></script>
+		<script src="{{ asset('assets/js/custom.js') }}"></script>
 
 	</body>
 </html>

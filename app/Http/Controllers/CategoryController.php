@@ -24,8 +24,21 @@ class CategoryController extends Controller
         $category->save();
 
         return redirect('categories')->with('success', 'New category has been added !');
+    }
+ 
+    public function update(Request $request, Category $category)
+    {
+        $attributes = $request->validate([
+            'name' => ['required', 'max:30']
+        ]);
 
+        $category->update(['name' => $request->name]);
+        return redirect('categories')->with('success-category', 'The Category has been updated !');
+    }
 
-
+    public function destroy(Request $request, Category $category)
+    {
+        $category->delete();
+        return redirect('categories')->with('success-category', 'The category has been deleted !');
     }
 }

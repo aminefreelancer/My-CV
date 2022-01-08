@@ -14,6 +14,13 @@
                 <div class="card-header">
                     <h3 class="card-title">Categories List</h3>
                 </div>
+                @if (session()->has('success-category'))
+                    <div class="card-body">
+                        @component('admin.layouts.info-flash', ['alert' => 'alert-info'])
+                            {{ session('success-category') }}
+                        @endcomponent
+                    </div>
+                @endif
                 <div class="card-body">
                     @if(count($categories))
                     <div class="table-responsive">
@@ -29,10 +36,61 @@
                                 <tr class="border-bottom">
                                     <td>{{ $category->name }}</td>
                                     <td>
-                                        <button type="button" class="btn btn-icon  btn-warning"><i class="fe fe-edit"></i></button>
-                                        <button type="button" class="btn btn-icon  btn-danger"><i class="fe fe-trash"></i></button>                          
+                                        <button type="button" class="btn btn-icon  btn-warning" data-bs-toggle="modal" data-bs-target="#smallmodal{{$category->id}}"><i class="fe fe-edit"></i></button>
+                                        <button type="button" class="btn btn-icon  btn-danger" data-bs-toggle="modal" data-bs-target="#removemodal{{$category->id}}"><i class="fe fe-trash"></i></button>                          
                                     </td>
                                 </tr>
+                                <div class="modal fade" id="smallmodal{{$category->id}}" tabindex="-1" role="dialog" aria-labelledby="smallmodal{{$category->id}}" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="smallmodal1">Category Edit : {{$category->name}}</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">×</span>
+                                                </button>
+                                            </div>
+                                            <form action="{{ route('updateCategory', ['category' => $category]) }}" method="POST">
+                                                <div class="modal-body">
+                                                    @csrf
+                                                    @method('PUT')
+                                                    <div class="form-group">
+                                                        <label for="category" class="form-label">Category Name</label>
+                                                        <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" required id="category"  value="{{$category->name}}" placeholder="Enter a category">
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                    <button type="submit" class="btn btn-primary">Update</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="modal fade" id="removemodal{{$category->id}}" tabindex="-1" role="dialog" aria-labelledby="removemodal{{$category->id}}" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="removemodal1">Delete Category : {{$category->name}}</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">×</span>
+                                                </button>
+                                            </div>
+                                            <form action="{{ route('deleteCategory', ['category' => $category]) }}" method="POST">
+                                                <div class="modal-body">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <p>Please confirm the action !</p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
                                 @endforeach
                             </tbody>
                         </table>
@@ -45,6 +103,7 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header">

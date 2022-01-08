@@ -22,7 +22,7 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function create()
+    public function show()
     {   
         return view('admin.dashboard', ['user' => User::find(1)]);
     }
