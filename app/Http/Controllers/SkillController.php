@@ -34,7 +34,7 @@ class SkillController extends Controller
         $skill->category_id = $request->category_id;
         $skill->save();
 
-        return redirect('skills')->with('success', 'New skill has been added !');
+        return redirect()->route('skills')->with('success', 'New skill has been added !');
     }
 
     public function edit(Skill $skill)
@@ -50,13 +50,13 @@ class SkillController extends Controller
             'category_id' => ['required', 'exists:categories,id']
         ]);
         $skill->update($attributes);
-        return redirect('skills')->with('success-skill', 'The skill has been updated !');
+        return redirect()->route('skills')->with('success-skill', 'The skill has been updated !');
     }
 
     public function destroy(Request $request, Skill $skill)
     {
         $skill->delete();
-        return redirect('skills')->with('success-skill', 'The skill has been deleted !');
+        return redirect()->route('skills')->with('success-skill', 'The skill has been deleted !');
     }
 
 }

@@ -23,7 +23,7 @@ class CategoryController extends Controller
         $category->name = $request->name;
         $category->save();
 
-        return redirect('categories')->with('success', 'New category has been added !');
+        return redirect()->route('categories')->with('success', 'New category has been added !');
     }
  
     public function update(Request $request, Category $category)
@@ -33,12 +33,12 @@ class CategoryController extends Controller
         ]);
 
         $category->update(['name' => $request->name]);
-        return redirect('categories')->with('success-category', 'The Category has been updated !');
+        return redirect()->route('categories')->with('success-category', 'The Category has been updated !');
     }
 
     public function destroy(Request $request, Category $category)
     {
         $category->delete();
-        return redirect('categories')->with('success-category', 'The category has been deleted !');
+        return redirect()->route('categories')->with('success-category', 'The category has been deleted !');
     }
 }

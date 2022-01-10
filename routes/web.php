@@ -26,7 +26,7 @@ Auth::routes();
 Route::get('/dashboard', [HomeController::class, 'show'])->name('dashboard');
 Route::post('/dashboard', [HomeController::class, 'update'])->name('updateDashboard');
 
-Route::get('/socials', [SocialController::class, 'show'])->name('social');
+Route::get('/socials', [SocialController::class, 'show'])->name('socials');
 Route::post('/socials', [SocialController::class, 'store'])->name('newSocial');
 Route::put('/socials/{social}', [SocialController::class, 'update'])->name('updateSocial');
 Route::delete('/socials/{social}', [SocialController::class, 'destroy'])->name('deleteSocial');

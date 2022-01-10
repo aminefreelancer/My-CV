@@ -46,6 +46,6 @@ class HomeController extends Controller
         $user = User::find(1);
         $user->update($attributes);
         
-        return redirect('dashboard')->with('success', 'Your information has been updated!');
+        return redirect()->route('dashboard')->with('success', 'Your information has been updated!');
     }
 }
