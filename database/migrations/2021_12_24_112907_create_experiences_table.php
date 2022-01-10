@@ -16,10 +16,10 @@ class CreateExperiencesTable extends Migration
         Schema::create('experiences', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->boolean('type')->default(false); // 0: work, 1: education
-            $table->string('title', 50);
+            $table->string('title', 100);
             $table->string('location', 100);
             $table->string('establishement', 50);
-            $table->date('from');
+            $table->string('from', 20);
             $table->string('to', 20);
             $table->text('description');
             $table->unsignedBigInteger('user_id');

@@ -46,6 +46,9 @@
 		<!--INTERNAL Select2 css -->
 		<link href="{{ asset('assets/plugins/select2/select2.min.css') }}" rel="stylesheet" />
 
+		<!-- INTERNAl WYSIWYG Editor css -->
+		<link href="{{ asset('assets/plugins/wysiwyag/richtext.css') }}" rel="stylesheet" />
+
 	</head>
 
 	<body class="app sidebar-mini">
@@ -72,8 +75,17 @@
 						<li class="side-item side-item-category">Main</li>
 						<li class="slide">
 							<a class="side-menu__item"  href="{{ route('dashboard') }}">
-							<svg xmlns="http://www.w3.org/2000/svg"  class="side-menu__icon" width="24" height="24" viewBox="0 0 24 24"><path d="M3 13h1v7c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2v-7h1a1 1 0 0 0 .707-1.707l-9-9a.999.999 0 0 0-1.414 0l-9 9A1 1 0 0 0 3 13zm7 7v-5h4v5h-4zm2-15.586 6 6V15l.001 5H16v-5c0-1.103-.897-2-2-2h-4c-1.103 0-2 .897-2 2v5H6v-9.586l6-6z"/></svg>
+							<svg xmlns="http://www.w3.org/2000/svg"  class="side-menu__icon" width="24" height="24" viewBox="0 0 24 24">
+								<path d="M3 13h1v7c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2v-7h1a1 1 0 0 0 .707-1.707l-9-9a.999.999 0 0 0-1.414 0l-9 9A1 1 0 0 0 3 13zm7 7v-5h4v5h-4zm2-15.586 6 6V15l.001 5H16v-5c0-1.103-.897-2-2-2h-4c-1.103 0-2 .897-2 2v5H6v-9.586l6-6z"/>
+							</svg>
 							<span class="side-menu__label">Dashboard</span></a>
+						</li>
+						<li class="slide">
+							<a class="side-menu__item"  href="{{ route('social') }}">
+							<svg xmlns="http://www.w3.org/2000/svg"  class="side-menu__icon" width="24" height="24" viewBox="0 0 24 24">
+								<path d="M3 11h8V3H3zm2-6h4v4H5zM3 21h8v-8H3zm2-6h4v4H5zm8-12v8h8V3zm6 6h-4V5h4zm-5.99 4h2v2h-2zm2 2h2v2h-2zm-2 2h2v2h-2zm4 0h2v2h-2zm2 2h2v2h-2zm-4 0h2v2h-2zm2-6h2v2h-2zm2 2h2v2h-2z"/>
+							</svg>
+							<span class="side-menu__label">Social Media</span></a>
 						</li>
 						<li class="side-item side-item-category">Skills</li>
 						<li class="slide">
@@ -88,12 +100,12 @@
 						</li>
 						<li class="side-item side-item-category">Experiences</li>
 						<li class="slide">
-							<a class="side-menu__item" data-bs-toggle="slide" href="#">
+							<a class="side-menu__item" data-bs-toggle="slide" href="{{ route('experiences', ['type' => 'work']) }}">
 							<svg xmlns="http://www.w3.org/2000/svg"  class="side-menu__icon" width="24" height="24" viewBox="0 0 24 24"><path d="M22 7.999a1 1 0 0 0-.516-.874l-9.022-5a1.003 1.003 0 0 0-.968 0l-8.978 4.96a1 1 0 0 0-.003 1.748l9.022 5.04a.995.995 0 0 0 .973.001l8.978-5A1 1 0 0 0 22 7.999zm-9.977 3.855L5.06 7.965l6.917-3.822 6.964 3.859-6.918 3.852z"/><path d="M20.515 11.126 12 15.856l-8.515-4.73-.971 1.748 9 5a1 1 0 0 0 .971 0l9-5-.97-1.748z"/><path d="M20.515 15.126 12 19.856l-8.515-4.73-.971 1.748 9 5a1 1 0 0 0 .971 0l9-5-.97-1.748z"/></svg>
 							<span class="side-menu__label">Work</span></a>
 						</li>
 						<li class="slide">
-							<a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0);">
+							<a class="side-menu__item" data-bs-toggle="slide" href="{{ route('experiences', ['type' => 'education']) }}">
 							<svg xmlns="http://www.w3.org/2000/svg"  class="side-menu__icon" width="24" height="24" viewBox="0 0 24 24"><path d="M19 3H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2zm0 2 .001 4H5V5h14zM5 11h8v8H5v-8zm10 8v-8h4.001l.001 8H15z"/></svg>
 							<span class="side-menu__label">Education</span></a>
 						</li>
@@ -216,6 +228,9 @@
 		<!-- INTERNAL File uploads js -->
         <script src="{{ asset('assets/plugins/fileupload/js/dropify.js') }}"></script>
 		<script src="{{ asset('assets/js/filupload.js') }}"></script>
+
+		<script src="{{ asset('assets/plugins/wysiwyag/jquery.richtext.js') }}"></script>
+		<script src="{{ asset('assets/js/form-editor.js') }}"></script>
 
 		<!--INTERNAL Select2 js -->
 		<script src="{{ asset('assets/plugins/select2/select2.full.min.js') }}"></script>
