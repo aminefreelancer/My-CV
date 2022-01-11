@@ -1,8 +1,12 @@
 <?php
 
+use App\User;
+use App\Category;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SkillController;
 use App\Http\Controllers\SocialController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ExperienceController;
 
@@ -18,8 +22,17 @@ use App\Http\Controllers\ExperienceController;
 */
 
 Route::get('/', function () {
-    return view('home');
+    $user = User::find(1);
+    $categories = Category::all();
+    return view('home', ['user' => $user, 'categories' => $categories]);
 })->name('home');
+
+Route::get('/contact', function () {
+    $user = User::find(1);
+    return view('contact', ['user' => $user]);
+})->name('contact');
+
+Route::post('/contact', [ContactController::class, 'send'])->name('send');
 
 Auth::routes();
 

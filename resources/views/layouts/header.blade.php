@@ -3,7 +3,7 @@
           
       <!-- Text Logo -->
       <div class="text-logo">
-        <a href="index.html">
+        <a href="{{route('home')}}">
           {{-- <div class="logo-symbol">A</div> --}}
           <div class="logo-text">Mohamed Amine <span>AKACHA</span></div>
         </a>
@@ -14,20 +14,12 @@
       <div class="site-nav mobile-menu-hide">
         <ul class="leven-classic-menu site-main-menu">
 
-          <li class="menu-item">
-              <a href="./">About Me</a>
-            </li>
-
-          <li class="menu-item">
-            <a href="/resume">Resume</a>
+          <li class="menu-item {{ (Request::url() == route('home') ? 'current-menu-item' : '')}} ">
+              <a href="{{route('home')}}">Resume</a>
           </li>
 
-          <li class="menu-item">
-              <a href="/portfolio">Portfolio</a>
-          </li>
-
-          <li class="menu-item">
-            <a href="/contact">Hire Me</a>
+          <li class="menu-item {{ (Request::url() == route('contact') ? 'current-menu-item' : '')}}">
+            <a href="{{route('contact')}}">Hire Me</a>
           </li>
         </ul>
       </div>
